@@ -1,155 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo de la Música</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jairo Bedó | Desarrollador</title>
 
-    <style>
-        body{
-            margin:0;
-            font-family: Arial, sans-serif;
-            background-color:#111;
-            color:white;
-        }
+<style>
 
-        header{
-            background:#1db954;
-            padding:20px;
-            text-align:center;
-        }
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
 
-        nav{
-            background:#222;
-            padding:10px;
-            text-align:center;
-        }
+/* MATRIX CANVAS */
 
-        nav a{
-            color:white;
-            margin:0 15px;
-            text-decoration:none;
-            font-weight:bold;
-        }
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
 
-        nav a:hover{
-            color:#1db954;
-        }
+/* HERO */
 
-        section{
-            padding:40px;
-            max-width:1000px;
-            margin:auto;
-        }
+.hero{
+text-align:center;
+padding:120px 20px;
+}
 
-        .generos{
-            display:flex;
-            gap:20px;
-            flex-wrap:wrap;
-        }
+.hero h1{
+font-size:50px;
+}
 
-        .card{
-            background:#222;
-            padding:20px;
-            border-radius:10px;
-            flex:1 1 200px;
-            transition:0.3s;
-        }
+.hero span{
+color:#00ff9d;
+}
 
-        .card:hover{
-            transform:scale(1.05);
-            background:#333;
-        }
+.hero p{
+font-size:20px;
+opacity:0.8;
+}
 
-        footer{
-            background:#000;
-            text-align:center;
-            padding:20px;
-            margin-top:40px;
-        }
+button{
+padding:12px 25px;
+background:#00ff9d;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+margin-top:15px;
+}
 
-        button{
-            background:#1db954;
-            border:none;
-            padding:10px 20px;
-            border-radius:5px;
-            cursor:pointer;
-            font-weight:bold;
-        }
+/* SECCIONES */
 
-        button:hover{
-            background:#17a74a;
-        }
-    </style>
+section{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* HABILIDADES */
+
+.skill{
+margin:20px 0;
+}
+
+.barra{
+height:12px;
+background:#1f2937;
+border-radius:20px;
+}
+
+.progreso{
+height:12px;
+background:#00ff9d;
+border-radius:20px;
+}
+
+/* PROYECTOS */
+
+.repos{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.repo{
+background:#111;
+padding:20px;
+border-radius:10px;
+flex:1 1 250px;
+transition:0.3s;
+}
+
+.repo:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+}
+
+a{
+color:#00ff9d;
+text-decoration:none;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>🎵 Mundo de la Música</h1>
-    <p>Explora géneros, artistas y sonidos increíbles</p>
-</header>
+<canvas id="matrix"></canvas>
 
-<nav>
-    <a href="#">Inicio</a>
-    <a href="#">Géneros</a>
-    <a href="#">Artistas</a>
-    <a href="#">Contacto</a>
-</nav>
+<div class="hero">
+
+<h1>👨‍💻 Jairo <span>Bedó</span></h1>
+
+<p>Desarrollador Web | Informática | Aprendiendo nuevas tecnologías</p>
+
+<button onclick="contacto()">Contactarme</button>
+
+<br>
+
+<a href="#" download>
+<button>Descargar CV</button>
+</a>
+
+</div>
 
 <section>
-    <h2>Sobre la Música</h2>
-    <p>
-        La música es una forma universal de expresión que conecta culturas,
-        emociones e historias. Desde el rock hasta el jazz, cada género
-        transmite una energía única.
-    </p>
+
+<h2>Sobre mí</h2>
+
+<p style="text-align:center; max-width:700px; margin:auto;">
+Soy Jairo Bedó, apasionado por la informática y la programación.
+Estoy construyendo proyectos y aprendiendo desarrollo web para
+convertirme en desarrollador profesional. Me gusta crear soluciones
+tecnológicas y seguir mejorando cada día.
+</p>
+
 </section>
 
 <section>
-    <h2>Géneros Populares</h2>
 
-    <div class="generos">
-        <div class="card">
-            <h3>🎸 Rock</h3>
-            <p>Guitarras eléctricas, batería fuerte y mucha energía.</p>
-        </div>
+<h2>Habilidades</h2>
 
-        <div class="card">
-            <h3>🎤 Pop</h3>
-            <p>Melodías pegadizas y artistas populares en todo el mundo.</p>
-        </div>
+<div class="skill">
+HTML
+<div class="barra"><div class="progreso" style="width:80%"></div></div>
+</div>
 
-        <div class="card">
-            <h3>🎧 Electrónica</h3>
-            <p>Sonidos digitales y ritmos perfectos para bailar.</p>
-        </div>
+<div class="skill">
+CSS
+<div class="barra"><div class="progreso" style="width:70%"></div></div>
+</div>
 
-        <div class="card">
-            <h3>🎷 Jazz</h3>
-            <p>Improvisación, estilo y una gran tradición musical.</p>
-        </div>
-    </div>
+<div class="skill">
+JavaScript
+<div class="barra"><div class="progreso" style="width:50%"></div></div>
+</div>
+
+<div class="skill">
+Informática
+<div class="barra"><div class="progreso" style="width:75%"></div></div>
+</div>
+
 </section>
 
 <section>
-    <h2>Escucha Música</h2>
 
-    <audio controls>
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-    </audio>
+<h2>Proyectos (GitHub)</h2>
 
-    <br><br>
+<div class="repos" id="repos"></div>
 
-    <button onclick="alert('¡Gracias por visitar la página de música!')">
-        Haz clic aquí
-    </button>
 </section>
 
 <footer>
-    <p>© 2026 Mundo de la Música | Página de ejemplo</p>
+
+<p>GitHub: github.com/jairovegalaboral-byte</p>
+
+<p>© 2026 Jairo Bedó</p>
+
 </footer>
+
+<script>
+
+/* BOTON CONTACTO */
+
+function contacto(){
+alert("Puedes contactarme en GitHub: github.com/jairovegalaboral-byte");
+}
+
+/* CARGAR REPOS GITHUB */
+
+fetch("https://api.github.com/users/jairovegalaboral-byte/repos")
+.then(res => res.json())
+.then(data => {
+
+let repos = document.getElementById("repos");
+
+data.slice(0,6).forEach(repo => {
+
+repos.innerHTML += `
+<div class="repo">
+<h3>${repo.name}</h3>
+<p>${repo.description || "Proyecto de desarrollo."}</p>
+<a href="${repo.html_url}" target="_blank">Ver proyecto</a>
+</div>
+`;
+
+});
+
+});
+
+/* MATRIX EFFECT */
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+let letters = "01";
+letters = letters.split("");
+
+let fontSize = 14;
+let columns = canvas.width/fontSize;
+
+let drops = [];
+
+for(let x = 0; x < columns; x++)
+drops[x] = 1;
+
+function draw(){
+
+ctx.fillStyle = "rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle = "#00ff9d";
+ctx.font = fontSize + "px monospace";
+
+for(let i = 0; i < drops.length; i++){
+
+let text = letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+drops[i] = 0;
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,33);
+
+</script>
 
 </body>
 </html>
